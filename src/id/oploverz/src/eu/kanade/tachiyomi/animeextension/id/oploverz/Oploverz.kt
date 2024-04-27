@@ -30,7 +30,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class Oploverz : ConfigurableAnimeSource, AnimeHttpSource() {
-    private val mainBaseUrl: String = "https://oploverz.gold"
+    private val mainBaseUrl: String = "https://oploverz.blog"
 
     override val name: String = "Oploverz"
     override val lang: String = "id"

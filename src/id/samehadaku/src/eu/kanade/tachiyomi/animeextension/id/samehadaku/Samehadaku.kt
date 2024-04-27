@@ -31,7 +31,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class Samehadaku : ConfigurableAnimeSource, AnimeHttpSource() {
-    private val mainBaseUrl: String = "https://samehadaku.show"
+    private val mainBaseUrl: String = "https://samehadaku.email"
 
     override val name: String = "Samehadaku"
     override val lang: String = "id"
