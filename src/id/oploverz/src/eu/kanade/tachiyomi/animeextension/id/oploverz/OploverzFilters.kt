@@ -63,6 +63,8 @@ object OploverzFilters {
         FiltersData.STUDIO.map { CheckBoxVal(it.first, false) },
     )
 
+    class SubFilter : QueryPartFilter("Sub", FiltersData.SUB)
+
     class TypeFilter : QueryPartFilter("Type", FiltersData.TYPE)
 
     class StatusFilter : QueryPartFilter("Status", FiltersData.STATUS)
@@ -74,6 +76,7 @@ object OploverzFilters {
             GenreFilter(),
             SeasonFilter(),
             StudioFilter(),
+            SubFilter(),
             TypeFilter(),
             StatusFilter(),
             OrderFilter(),
@@ -97,6 +100,9 @@ object OploverzFilters {
 
     private object FiltersData {
         val ORDER = arrayOf(
+            Pair("Default", ""),
+            Pair("A-Z", "title"),
+            Pair("Z-A", "titlereverse"),
             Pair("Latest Update", "update"),
             Pair("Latest Added", "latest"),
             Pair("Popular", "popular"),
@@ -105,46 +111,54 @@ object OploverzFilters {
 
         val STATUS = arrayOf(
             Pair("All", ""),
-            Pair("Currently Airing", "Currently Airing"),
-            Pair("Finished Airing", "Finished Airing"),
+            Pair("Ongoing", "ongoing"),
+            Pair("Completed", "completed"),
+            Pair("Upcoming", "upcoming"),
+            Pair("Hiatus", "hiatus"),
         )
 
         val TYPE = arrayOf(
             Pair("All", ""),
-            Pair("TV", "TV"),
-            Pair("OVA", "OVA"),
-            Pair("ONA", "ONA"),
-            Pair("Special", "Special"),
-            Pair("Movie", "Movie"),
+            Pair("TV Series", "tv"),
+            Pair("OVA", "ova"),
+            Pair("Movie", "movie"),
+            Pair("Live Action", "live action"),
+            Pair("Special", "special"),
+            Pair("BD", "bd"),
+            Pair("ONA", "ona"),
+            Pair("Music", "music"),
         )
 
         val GENRE = arrayOf(
             Pair("Action", "action"),
             Pair("Adventure", "adventure"),
-            Pair("Award Winning", "award-winning"),
+            Pair("Cars", "cars"),
             Pair("Comedy", "comedy"),
+            Pair("Demons", "demons"),
             Pair("Drama", "drama"),
             Pair("Ecchi", "ecchi"),
             Pair("Fantasy", "fantasy"),
             Pair("Game", "game"),
             Pair("Gore", "gore"),
-            Pair("Gourmet", "gourmet"),
             Pair("Harem", "harem"),
             Pair("Historical", "historical"),
             Pair("Horror", "horror"),
+            Pair("Infinite", "infinite"),
             Pair("Isekai", "isekai"),
             Pair("Josei", "josei"),
-            Pair("Live Action", "live-action"),
+            Pair("KlockWorx", "klockworx"),
             Pair("Magic", "magic"),
             Pair("Martial Arts", "martial-arts"),
             Pair("Mecha", "mecha"),
             Pair("Military", "military"),
+            Pair("Movic", "movic"),
             Pair("Music", "music"),
             Pair("Mystery", "mystery"),
+            Pair("Mythology", "mythology"),
             Pair("Parody", "parody"),
+            Pair("Police", "police"),
             Pair("Psychological", "psychological"),
-            Pair("Racing", "racing"),
-            Pair("Reverse Harem", "reverse-harem"),
+            Pair("Reincarnation", "reincarnation"),
             Pair("Romance", "romance"),
             Pair("Samurai", "samurai"),
             Pair("School", "school"),
@@ -152,15 +166,18 @@ object OploverzFilters {
             Pair("Seinen", "seinen"),
             Pair("Shoujo", "shoujo"),
             Pair("Shounen", "shounen"),
-            Pair("Siekai", "siekai"),
+            Pair("Showbiz", "showbiz"),
+            Pair("Showgate", "showgate"),
             Pair("Slice of Life", "slice-of-life"),
+            Pair("Sotsu", "sotsu"),
+            Pair("Space", "space"),
             Pair("Sports", "sports"),
             Pair("Super Power", "super-power"),
             Pair("Supernatural", "supernatural"),
             Pair("Survival", "survival"),
-            Pair("Suspense", "suspense"),
-            Pair("Time Travel", "time-travel"),
+            Pair("Thriller", "thriller"),
             Pair("Vampire", "vampire"),
+            Pair("Warner Bros", "warner-bros"),
         )
 
         val SEASON = arrayOf(
@@ -198,6 +215,7 @@ object OploverzFilters {
             Pair("Spring 2021", "spring-2021"),
             Pair("Spring 2022", "spring-2022"),
             Pair("Spring 2023", "spring-2023"),
+            Pair("Spring 2024", "spring-2024"),
             Pair("Summer 1996", "summer-1996"),
             Pair("Summer 2012", "summer-2012"),
             Pair("Summer 2013", "summer-2013"),
@@ -251,6 +269,7 @@ object OploverzFilters {
             Pair("Children's Playground Entertainment", "childrens-playground-entertainment"),
             Pair("CloverWorks", "cloverworks"),
             Pair("Connect", "connect"),
+            Pair("DandeLion Animation Studio", "dandelion-animation-studio"),
             Pair("David Production", "david-production"),
             Pair("Diomedea", "diomedea"),
             Pair("Doga Kobo", "doga-kobo"),
@@ -323,6 +342,13 @@ object OploverzFilters {
             Pair("White Fox", "white-fox"),
             Pair("Wit Studio", "wit-studio"),
             Pair("Yumeta Company", "yumeta-company"),
+        )
+
+        val SUB = arrayOf(
+            Pair("All", ""),
+            Pair("Sub", "sub"),
+            Pair("Dub", "dub"),
+            Pair("RAW", "raw"),
         )
     }
 }
